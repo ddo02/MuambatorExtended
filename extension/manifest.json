@@ -1,0 +1,39 @@
+{
+  "name": "Muambator Extended",
+  "version": "0.3",
+  "manifest_version": 2,
+  "description": "Aumente a capacidade do Muambator.",
+  "content_scripts" : [
+    {
+      "matches" : [
+        "http://muambator.com.br/pacotes/pendentes/*",
+        "http://www.muambator.com.br/pacotes/pendentes/*",
+        "http://muambator.com.br/pacotes/entregues/*",
+        "http://www.muambator.com.br/pacotes/entregues/*",
+        "http://muambator.com.br/pacotes/arquivados/*",
+        "http://www.muambator.com.br/pacotes/arquivados/*"
+      ],
+      "js" : ["jquery-1.8.2.min.js", "lista.js"],
+      "run_at" : "document_end"
+    },
+    {
+      "matches" : [
+        "http://muambator.com.br/pacotes/detalhes/*",
+        "http://www.muambator.com.br/pacotes/detalhes/*"
+      ],
+      "js" : ["jquery-1.8.2.min.js", "detalhe.js"],
+      "run_at" : "document_end"
+    }
+  ],
+  "page_action" : {
+    "default_icon" : "img/MEX-logo-19.png"
+  },
+  "web_accessible_resources": [
+    "img/correios_icon.jpg"
+  ],
+  "icons": {
+	"19" : "img/MEX-logo-19.png",
+    "48" : "img/MEX-logo-48.png",
+    "128" : "img/MEX-logo-128.png"
+  }
+}

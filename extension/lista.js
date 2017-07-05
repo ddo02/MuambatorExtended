@@ -1,12 +1,22 @@
 var rows = $('tbody:eq(0) tr');
 
+// PO123456789BR
+var regExp = /[a-zA-Z]{2}\d{9}[a-zA-Z]{2}/;
+
 rows.each(function() {
-  $this = $(this)
-  var codeCol = $this.find("td:eq(0)");
-  
-  var validateCol = $this.find("td:eq(1)");
-  
-  if(validateCol.length > 0) {
-    $('<a href=http://websro.correios.com.br/sro_bin/txect01$.QueryList?P_LINGUA=001&P_TIPO=001&P_COD_UNI=' + codeCol.find("a:eq(0)").text() +' target="_blank"><img src="' + chrome.extension.getURL("img/correios_icon.jpg") + '"></a>').prependTo(codeCol);
-  }
+	$this = $(this)
+	
+	var codeCol = $this.find("td:eq(0)");
+	
+	var validateCol = $this.find("td:eq(1)");
+	
+	if(validateCol.length > 0) {
+		
+		var rast = regExp.exec($this.html());
+		
+		$(`<form style="display:inline" method="POST" target="_blank" action="http://www2.correios.com.br/sistemas/rastreamento/resultado_semcontent.cfm">
+		<input type="hidden" name="Objetos" value="` + rast + `">
+		<input class="icone-categoria" style="width:20px;margin-bottom:-5px" type="image" value=" " src=` + chrome.extension.getURL("img/correios_icon.jpg") + `>
+		</form>`).prependTo(codeCol);
+	}
 });

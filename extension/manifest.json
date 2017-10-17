@@ -1,6 +1,6 @@
 {
   "name": "Muambator Extended",
-  "version": "0.4",
+  "version": "0.5",
   "manifest_version": 2,
   "description": "Aumente a capacidade do Muambator, adicionando link direto para o site dos Correios.",
   "content_scripts" : [

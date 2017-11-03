@@ -1,6 +1,6 @@
 {
   "name": "Muambator Extended",
-  "version": "0.5",
+  "version": "0.6",
   "manifest_version": 2,
   "description": "Aumente a capacidade do Muambator, adicionando link direto para o site dos Correios.",
   "content_scripts" : [
@@ -13,7 +13,16 @@
         "https://muambator.com.br/pacotes/arquivados/*",
         "https://www.muambator.com.br/pacotes/arquivados/*",
         "https://muambator.com.br/pacotes/tributados/*",
-        "https://www.muambator.com.br/pacotes/tributados/*"
+        "https://www.muambator.com.br/pacotes/tributados/*",
+        
+        "http://muambator.com.br/pacotes/pendentes/*",
+        "http://www.muambator.com.br/pacotes/pendentes/*",
+        "http://muambator.com.br/pacotes/entregues/*",
+        "http://www.muambator.com.br/pacotes/entregues/*",
+        "http://muambator.com.br/pacotes/arquivados/*",
+        "http://www.muambator.com.br/pacotes/arquivados/*",
+        "http://muambator.com.br/pacotes/tributados/*",
+        "http://www.muambator.com.br/pacotes/tributados/*"
       ],
       "js" : ["jquery-1.8.2.min.js", "lista.js"],
       "run_at" : "document_end"
@@ -21,7 +30,10 @@
     {
       "matches" : [
         "https://muambator.com.br/pacotes/*/detalhes/",
-        "https://www.muambator.com.br/pacotes/*/detalhes/"
+        "https://www.muambator.com.br/pacotes/*/detalhes/",
+        
+        "http://muambator.com.br/pacotes/*/detalhes/",
+        "http://www.muambator.com.br/pacotes/*/detalhes/"
       ],
       "js" : ["jquery-1.8.2.min.js", "detalhe.js"],
       "run_at" : "document_end"

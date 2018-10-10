@@ -18,7 +18,7 @@ rows.each(function() {
                 
                 $(`<span class="flag-icon flag-icon-` + flag + `" style="vertical-align: initial;"></span>`).prependTo(codeCol);
                 
-		$(`<form style="display:inline" method="POST" target="_blank" action="http://www2.correios.com.br/sistemas/rastreamento/resultado_semcontent.cfm">
+		$(`<form style="display:inline" method="POST" target="_blank" action="http://www2.correios.com.br/sistemas/rastreamento/resultado.cfm">
 		<input type="hidden" name="Objetos" value="` + rast + `">
 		<input class="icone-categoria" style="width:20px;margin-bottom:-5px" type="image" value=" " src=` + chrome.extension.getURL("img/correios_icon.jpg") + `>
 		</form>`).prependTo(codeCol);
